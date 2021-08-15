@@ -4,7 +4,7 @@ FROM node:alpine
 RUN apk add --update git
            
 #Set working directory
-WORKDIR '/apps/react'
+WORKDIR '/apps'
 
 #Clone directory
 RUN git clone https://github.com/graemebrooks/WA2-Frontend.git
