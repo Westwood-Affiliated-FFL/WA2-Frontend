@@ -6,7 +6,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <p>
-          WAFFL Archive 2 - Hooray!!!!
+          WAFFL Archive 2 - Hooray!!!! ---- Docker pulled latest!
         </p>
       </header>
     </div>

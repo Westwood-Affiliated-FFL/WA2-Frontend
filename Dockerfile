@@ -5,7 +5,7 @@ RUN apt-get update \
      apt-get install -y git
 RUN mkdir /apps/react \      
            cd /apps/react \        
-           git clone https://github.com/jagadish12/SampleTest.git
+           git clone https://github.com/graemebrooks/WA2-Frontend.git
            
 #Set working directory
 WORKDIR '/apps/react'
