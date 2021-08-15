@@ -19,7 +19,7 @@ workflows:
       - install-node-example
       - aws-ecr/build-and-push-image:
             repo: waffl-archive-react
-            dockerfile: build/Dockerfile.prod
+            dockerfile: docker/Dockerfile.prod
             path: .
             requires:
               - install-node-example
