@@ -19,7 +19,6 @@ workflows:
       - install-node-example
       - aws-ecr/build-and-push-image:
             repo: waffl-archive-react
-            tag: "latest, v.0.1.${CIRCLE_BUILD_NUM}"
             dockerfile: build/Dockerfile.prod
             path: .
             requires:
