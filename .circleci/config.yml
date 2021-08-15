@@ -1,0 +1,26 @@
+version: 2.1
+
+orbs:
+  node: circleci/node@4.7.0
+  aws-ecr: circleci/aws-ecr@7.0.0
+
+jobs:
+  install-node-example:
+    docker:
+      - image: 'cimg/base:stable'
+    steps:
+      - checkout
+      - node/install:
+          install-yarn: true
+      - run: node --version
+workflows:
+  test_my_app:
+    jobs:
+      - install-node-example
+      - aws-ecr/build-and-push-image:
+            repo: waffl-archive-react
+            tag: "latest, v.0.1.${CIRCLE_BUILD_NUM}"
+            dockerfile: build/Dockerfile.prod
+            path: .
+            requires:
+              - install-node-example
