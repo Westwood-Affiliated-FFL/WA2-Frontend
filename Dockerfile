@@ -1,8 +1,7 @@
 FROM node:alpine
 
 #Install git
-RUN apt-get update \        
-     apt-get install -y git
+RUN apk add --update git
 RUN mkdir /apps/react \      
            cd /apps/react \        
            git clone https://github.com/graemebrooks/WA2-Frontend.git
