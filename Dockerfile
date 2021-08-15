@@ -2,12 +2,12 @@ FROM node:alpine
 
 #Install git
 RUN apk add --update git
-RUN mkdir /apps/react \      
-           cd /apps/react \        
-           git clone https://github.com/graemebrooks/WA2-Frontend.git
            
 #Set working directory
 WORKDIR '/apps/react'
+
+#Clone directory
+RUN git clone https://github.com/graemebrooks/WA2-Frontend.git
 
 COPY package.json .
 ENV PATH="./node_modules/.bin:$PATH"

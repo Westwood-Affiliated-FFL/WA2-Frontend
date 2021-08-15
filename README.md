@@ -47,4 +47,4 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 ## Commands
 
-docker run --publish 3000:3000 reactimage
+docker run --publish 3000:3000 react
