@@ -28,4 +28,4 @@ workflows:
   build:
     jobs:
       - build
-      - test
+      - run_tests
