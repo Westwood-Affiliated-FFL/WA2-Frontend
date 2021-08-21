@@ -33,6 +33,6 @@ workflows:
           create-repo: true
           no-output-timeout: 20m
           region: AWS_REGION
-          repo: WA2-Frontend
+          repo: 'WA2-Frontend'
           skip-when-tags-exist: false
           tag: 'latest'
