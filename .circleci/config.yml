@@ -1,25 +1,31 @@
 version: 2.1
 
-orbs:
-  node: circleci/node@4.7.0
-  aws-ecr: circleci/aws-ecr@7.0.0
+# orbs:
+#   node: circleci/node@4.7.0
 
 jobs:
-  install-node-example:
+  run_tests:
     docker:
-      - image: 'cimg/base:stable'
+      - image: 'circleci/node@4.7.0'
     steps:
       - checkout
-      - node/install:
-          install-yarn: true
-      - run: node --version
+      - run:
+        name: Install npm dependencies
+        command: |
+          sudo npm install -g
+      - run:
+        name: Run unit tests
+        command: |
+          npm run tests
+  build:
+    docker:
+      - image: 'circleci/node@4.7.0'
+    steps:
+      - checkout
+      - run: npm run build
+
 workflows:
-  test_my_app:
+  build:
     jobs:
-      - install-node-example
-      - aws-ecr/build-and-push-image:
-            repo: waffl-archive-react
-            dockerfile: docker/Dockerfile.prod
-            path: .
-            requires:
-              - install-node-example
+      - build
+      - test
