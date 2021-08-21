@@ -1,5 +1,9 @@
 version: 2.1
 
+orbs:
+  aws-ecr: circleci/aws-ecr@6.15
+  aws-ecs: circleci/aws-ecs@2.0.0
+
 jobs:
   build:
     docker:
@@ -22,3 +26,8 @@ workflows:
     jobs:
       - build
       - run_tests
+      - aws-ecr/build-and-push-image:
+          account-url: 882165684475.dkr.ecr.us-east-2.amazonaws.com/waffl-archive-react
+          region: us-east-2
+          repo: '${MY_APP_PREFIX}'
+          tag: '${CIRCLE_SHA1}'
