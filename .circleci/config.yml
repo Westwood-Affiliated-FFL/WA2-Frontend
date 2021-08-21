@@ -9,6 +9,7 @@ jobs:
       - image: cimg/node:16.7.0
     steps:
       - checkout
+      - run: npm i
       - run: npm run build
 
 workflows:
