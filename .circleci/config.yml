@@ -4,19 +4,6 @@ version: 2.1
 #   node: circleci/node@4.7.0
 
 jobs:
-  run_tests:
-    docker:
-      - image: 'circleci/node@4.7.0'
-    steps:
-      - checkout
-      - run:
-        name: Install npm dependencies
-        command: |
-          sudo npm install -g
-      - run:
-        name: Run unit tests
-        command: |
-          npm run tests
   build:
     docker:
       - image: 'circleci/node@4.7.0'
