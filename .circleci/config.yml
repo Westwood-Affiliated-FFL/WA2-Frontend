@@ -17,14 +17,8 @@ jobs:
       - image: cimg/node:16.7.0
     steps:
       - checkout
-      - run:
-        name: Install npm dependencies
-        command: |
-          sudo npm install -g
-      - run:
-        name: Run unit tests
-        command: |
-          npm run tests
+      - run: npm i
+      - run: npm run tests
 
 workflows:
   build:
