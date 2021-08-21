@@ -14,7 +14,7 @@ jobs:
 
   run_tests:
     docker:
-      - image: 'circleci/node@4.7.0'
+      - image: cimg/node:16.7.0
     steps:
       - checkout
       - run:
