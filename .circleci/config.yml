@@ -30,9 +30,9 @@ workflows:
           account-url: AWS_ECR_ACCOUNT_URL
           aws-access-key-id: AWS_ACCESS_KEY_ID
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
-          create-repo: true
+          create-repo: false
           no-output-timeout: 20m
           region: AWS_REGION
-          repo: 'WA2-Frontend'
+          repo: waffl-archive-react
           skip-when-tags-exist: false
           tag: 'latest'
