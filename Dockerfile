@@ -4,9 +4,9 @@ FROM node:alpine
 RUN apk add --update git
            
 #Set working directory
-WORKDIR '/app'
+WORKDIR '/usr/src/app'
 
-COPY package*.json .
+COPY package*.json ./
 ENV PATH="./node_modules/.bin:$PATH"
 RUN npm install
 COPY . .
