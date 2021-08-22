@@ -38,5 +38,5 @@ workflows:
           skip-when-tags-exist: false
           tag: 'latest'
       - aws-ecs/run-task:
-          cluster: arn:aws:sts:us-east-2:882165684475:assumed-role/CodeStarWorker-waffl-archive-a-EB/i-03e6be6b0d8c61975 
+          cluster: arn:aws:ec2:us-east-2:882165684475:instance/i-03e6be6b0d8c61975
           task-definition: deploy-react-image:1
