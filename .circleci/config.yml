@@ -20,6 +20,7 @@ jobs:
       - checkout
       - run: npm i
       - run: npm run test
+  
 
 workflows:
   build:
@@ -36,3 +37,6 @@ workflows:
           repo: waffl-archive-react
           skip-when-tags-exist: false
           tag: 'latest'
+      - aws-ecs/run-task:
+          cluster: arn:aws:sts::882165684475:assumed-role/CodeStarWorker-waffl-archive-a-EB/i-03e6be6b0d8c61975 
+          task-definition: deploy-react-image:1
