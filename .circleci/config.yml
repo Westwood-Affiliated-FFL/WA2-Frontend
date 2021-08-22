@@ -40,3 +40,4 @@ workflows:
       - aws-ecs/run-task:
           cluster: arn:aws:ec2:us-east-2:882165684475:instance/i-03e6be6b0d8c61975
           task-definition: deploy-react-image:1
+          region: AWS_REGION
